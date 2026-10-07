@@ -32,8 +32,3 @@ python3 -m http.server 8000
 Depois acesse http://localhost:8000 no navegador. A página exibirá:
 
 Hello World
-
-Para mudar o texto, edite a tag <h1> em index.html:
-
-html
-<h1>Seu texto aqui</h1>
