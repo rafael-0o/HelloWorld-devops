@@ -1,0 +1,22 @@
+name: Ping Google Test
+
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  job1:
+    name: Primeiro Job - Ping Google
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping google.com
+        run: ping -c 4 google.com
+
+  job2:
+    name: Segundo Job - Dependente
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: Executar tarefa após o sucesso do Job 1
+        run: echo "O Job 1 terminou com sucesso! Iniciando o Job 2..."
